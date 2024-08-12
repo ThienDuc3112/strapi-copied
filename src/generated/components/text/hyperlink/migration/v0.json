@@ -1,0 +1,34 @@
+{
+    "action": "create",
+    "type": "component",
+    "payload": {
+        "name": "hyperlink",
+        "columns": [
+            {
+                "name": "text",
+                "type": "shortText",
+                "default": null,
+                "notNull": true,
+                "unique": false
+            },
+            {
+                "name": "link",
+                "type": "shortText",
+                "default": null,
+                "notNull": true,
+                "unique": false
+            }
+        ],
+        "pk": [
+            {
+                "name": "component_hyperlink_pk",
+                "columns": [
+                    "text",
+                    "link"
+                ]
+            }
+        ],
+        "index": [],
+        "fk": []
+    }
+}
