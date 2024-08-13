@@ -1,7 +1,7 @@
 export interface ComponentSchema {
   type: "component";
-  attributes: Attribute[];
-  tableName: string;
+  attributes: Record<string, Attribute>;
+  name: string;
   info: {
     displayName: string;
     description: string;
@@ -10,8 +10,8 @@ export interface ComponentSchema {
 
 export interface TypeSchema {
   type: "singleType" | "collections";
-  attributes: Attribute[];
-  tableName: string;
+  attributes: Record<string, Attribute>;
+  name: string;
   option: {
     publish: boolean;
   };
@@ -20,6 +20,9 @@ export interface TypeSchema {
     description: string;
   };
 }
+
+export type AvailableType = Attribute["type"];
+
 export type Attribute = DefaultAttribute | EnumAttribute | ComponentAttribute;
 
 export interface DefaultAttribute {

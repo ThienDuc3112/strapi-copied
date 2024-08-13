@@ -6,11 +6,11 @@
     - [ ] Collection type:
         - [ ] Public permission: Find all, find one record
         - [ ] author permission: Create, update, delete record
-        - [ ] (Super) Admin: Create, update, delete, publish type
+        - [ ] (Super) Admin: Create, (update,) delete, publish type
     - [ ] Single type:
         - [ ] Public permission: Find
         - [ ] Author permission: Update record
-        - [ ] (Super) Admin: Create, update, delete, publish type
+        - [ ] (Super) Admin: Create, (update,) delete, publish type
     - [ ] Role: 
         - [ ] Super Admin: Create admin and author
         - [ ] Admin: Create author
@@ -21,6 +21,9 @@
 - [ ] Sharable
   - [ ] Build from scratch
   - [ ] Build from existing codebase (i.e from a github repo)
+
+# Optional
+- [ ] Migration
 
 
 # Generated code structure
@@ -36,5 +39,5 @@
     - /[...component catagory]
       - /[component name]
         - schema.json
-        - /migration
+        - /migration (optional for me)
           - [...vXXX]
