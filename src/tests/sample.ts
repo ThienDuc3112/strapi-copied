@@ -1,4 +1,7 @@
-import { createComponentTable } from "@/service/components/new";
+import {
+  createComponentTable,
+  writeComponentSchema,
+} from "@/service/components/new";
 import { ComponentSchema } from "../interface/schema";
 
 export const sampleComponent: ComponentSchema = {
@@ -11,13 +14,14 @@ export const sampleComponent: ComponentSchema = {
   attributes: {
     sampleText: { type: "string", required: true, unique: true },
     sampleDescription: { type: "string", required: false, unique: false },
-    sampleComponent: {
-      type: "component",
-      required: false,
-      repeatable: false,
-      component: "sample.other_sample_component",
-    },
+    // sampleComponent: {
+    //   type: "component",
+    //   required: false,
+    //   repeatable: false,
+    //   component: "sample.other_sample_component",
+    // },
   },
 };
 
 createComponentTable(sampleComponent, "sample");
+writeComponentSchema(sampleComponent, "sample");

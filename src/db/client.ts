@@ -1,7 +1,9 @@
-import sqlite from "sqlite3";
-sqlite.verbose();
+import { Pool } from "pg";
 
-export const db = new sqlite.Database("./data.db", (err) => {
-  if (err) console.error(err);
-  else console.log("Connected to sqlite3 db");
+export const pool = new Pool({
+  host: "localhost",
+  port: 5678,
+  user: "postgres",
+  password: "password",
+  database: "test",
 });
