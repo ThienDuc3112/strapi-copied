@@ -33,11 +33,6 @@
       - schema.json
       - routes.js
       - controller.js
-      - /migration
-        - [...vXXX]
   - /components
     - /[...component catagory]
-      - /[component name]
-        - schema.json
-        - /migration (optional for me)
-          - [...vXXX]
+      - [component name].json
