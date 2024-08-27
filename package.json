@@ -4,7 +4,7 @@
   "description": "A barebone copy of strapi",
   "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ts-node -r tsconfig-paths/register .\\src\\tests\\sample.ts"
   },
   "keywords": [
     "cms"
@@ -13,7 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
-    "pg": "^8.12.0"
+    "pg": "^8.12.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
