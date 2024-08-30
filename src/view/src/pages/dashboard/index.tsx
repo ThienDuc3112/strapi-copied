@@ -1,83 +1,13 @@
-import {
-  BarChart3,
-  Book,
-  Database,
-  FileText,
-  Globe,
-  Key,
-  LayoutDashboard,
-  Menu,
-  Plus,
-  Search,
-  Settings,
-  Users,
-} from "lucide-react";
+import { BarChart3, Book, Database, Globe, Plus, Users } from "lucide-react";
+import { Sidebar } from "../../components/sidebar";
 
 export const Dashboard = () => {
   return (
     <div className="flex h-screen bg-gray-100 dark:bg-gray-900">
       {/* Sidebar */}
-      <aside className="hidden w-64 bg-white dark:bg-gray-800 md:block">
-        <div className="flex h-full flex-col">
-          <div className="flex h-14 items-center border-b px-4">
-            <h1 className="text-lg font-semibold dark:text-white">
-              Headless CMS
-            </h1>
-          </div>
-          <nav className="flex-1 overflow-y-auto p-2">
-            <ul className="space-y-1">
-              {[
-                { name: "Dashboard", icon: LayoutDashboard },
-                { name: "Content Types", icon: Database },
-                { name: "Content Manager", icon: FileText },
-                { name: "Media Library", icon: Book },
-                { name: "Users & Permissions", icon: Users },
-                { name: "API Tokens", icon: Key },
-                { name: "Settings", icon: Settings },
-              ].map((item) => (
-                <li key={item.name}>
-                  <a
-                    href="#"
-                    className="flex items-center rounded-lg px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    <item.icon className="h-5 w-5 mr-2" />
-                    {item.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </aside>
-
+      <Sidebar />
       {/* Main Content */}
       <div className="flex flex-1 flex-col overflow-hidden">
-        {/* Header */}
-        <header className="flex h-14 items-center border-b bg-white px-4 dark:bg-gray-800">
-          <button className="text-gray-500 focus:outline-none focus:ring md:hidden">
-            <Menu className="h-6 w-6" />
-          </button>
-          <div className="ml-auto flex items-center space-x-4">
-            <div className="relative">
-              <input
-                type="text"
-                className="w-full rounded-md border border-gray-300 bg-white py-2 pl-10 pr-4 text-gray-700 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"
-                placeholder="Search..."
-              />
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3">
-                <Search className="h-5 w-5 text-gray-400" />
-              </div>
-            </div>
-            <button className="rounded-full focus:outline-none focus:ring">
-              <img
-                className="h-8 w-8 rounded-full object-cover"
-                src="/placeholder.svg?height=32&width=32"
-                alt="User avatar"
-              />
-            </button>
-          </div>
-        </header>
-
         {/* Dashboard Content */}
         <main className="flex-1 overflow-y-auto p-4">
           <h2 className="text-2xl font-bold mb-4 dark:text-white">Dashboard</h2>
@@ -93,7 +23,7 @@ export const Dashboard = () => {
                 className="rounded-lg bg-white p-4 shadow dark:bg-gray-800"
               >
                 <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-medium text-gray-500 dark:text-white">
+                  <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400">
                     {stat.title}
                   </h3>
                   <stat.icon className="h-5 w-5 text-gray-400" />
@@ -144,8 +74,8 @@ export const Dashboard = () => {
                 </h3>
               </div>
               <div className="p-4">
-                <div className="h-64 w-full bg-gray-200 dark:bg-gray-700">
-                  <BarChart3 className="h-full w-full text-gray-400" />
+                <div className="h-64 w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                  <BarChart3 className="h-32 w-32 text-gray-400" />
                 </div>
               </div>
             </div>
